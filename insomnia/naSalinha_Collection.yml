@@ -1,0 +1,444 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Testando NaSalinha
+meta:
+  id: wrk_f19312a94fa04ded82d93095da5d8590
+  created: 1794167476954
+  modified: 1794167476954
+  description: ""
+collection:
+  - url: "{{ _.base_url }}/rankings"
+    name: Listar ranking
+    meta:
+      id: req_c78d9087ba5b4e0abe17b96075218975
+      created: 1794062918234
+      modified: 1794081481758
+      isPrivate: false
+      description: ""
+      sortKey: -1794062918234
+    method: GET
+    authentication:
+      type: bearer
+      token: "{{ _.token_user_a }}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Usuário
+    meta:
+      id: fld_bee18a2118694bbc90fd12c0b6a0d7ff
+      created: 1794167768775
+      modified: 1794167768775
+      sortKey: -1794167768775
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/auth/register"
+        name: Cadastro usuário
+        meta:
+          id: req_592dd136463f446bbe42e86d7060e9f7
+          created: 1793629696040
+          modified: 1794167792110
+          isPrivate: false
+          description: ""
+          sortKey: -1794167785463
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Ricardo Quaresma",
+              "email": "quaresma@email.com",
+              "password": "#teste1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/auth/login"
+        name: Login usuário
+        meta:
+          id: req_619aaa2b3ef14819a275e58d94c4a7ce
+          created: 1793658810233
+          modified: 1794168117012
+          isPrivate: false
+          description: ""
+          sortKey: -1794167785563
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "contatestesrichard@gmail.com",
+              "password": "#teste1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users"
+        name: Listar usuários
+        meta:
+          id: req_8d8f45259eae4f58b008eec23a236075
+          created: 1793661670045
+          modified: 1794167796725
+          isPrivate: false
+          description: ""
+          sortKey: -1794167785363
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/{{ _.user_id_delete }}"
+        name: Deletar usuário
+        meta:
+          id: req_45a20137abc04f0ca7660d49c536584a
+          created: 1794136658014
+          modified: 1794167802196
+          isPrivate: false
+          description: ""
+          sortKey: -1794167785163
+        method: DELETE
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/{{ _.user_id }}"
+        name: Update usuário
+        meta:
+          id: req_89aaf25468cc4e229401f6f6ff05b13c
+          created: 1794137116559
+          modified: 1794167799721
+          isPrivate: false
+          description: ""
+          sortKey: -1794167785263
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Bernardo Silva",
+              "email": "silva@email.com",
+              "password": "#teste1234"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.token_user_b }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Temporada
+    meta:
+      id: fld_f7647142eff0465694c923cc9e72e66c
+      created: 1794167818357
+      modified: 1794167818357
+      sortKey: -1794167818357
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/seasons"
+        name: Cadastro temporada
+        meta:
+          id: req_474580a0c17e4599a73e975785b2854c
+          created: 1793659029683
+          modified: 1794167824142
+          isPrivate: false
+          description: ""
+          sortKey: -1794167824078
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Temporada QA22",
+              "description": "Teste de permissão",
+              "startDate": "2026-03-01",
+              "endDate": "2026-11-30",
+              "isActive": true,
+              "pointsPerCheckIn": 15
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/seasons/{{ _.season_id }}"
+        name: Update temporada
+        meta:
+          id: req_ff2f86336a26438692f4cb5a24b4ea9e
+          created: 1794138068761
+          modified: 1794167829860
+          isPrivate: false
+          description: ""
+          sortKey: -1794167823878
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Temporada QA",
+              "description": "Teste de permissão",
+              "startDate": "2026-01-01",
+              "endDate": "2026-12-31",
+              "isActive": true,
+              "pointsPerCheckIn": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/seasons"
+        name: Listar temporada
+        meta:
+          id: req_703c4642dfcd45a18a0eb2bcb8a0635d
+          created: 1794138148950
+          modified: 1794167827035
+          isPrivate: false
+          description: ""
+          sortKey: -1794167823978
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/seasons/{{ _.season_id_delete }}"
+        name: Deletar temporada
+        meta:
+          id: req_f27c878adcc24055b7fcff80282dc15e
+          created: 1794138467773
+          modified: 1794167832124
+          isPrivate: false
+          description: ""
+          sortKey: -1794167823778
+        method: DELETE
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Check-in
+    meta:
+      id: fld_4382901e9aec4f0c993afbc1a74efac9
+      created: 1794167848424
+      modified: 1794167848424
+      sortKey: -1794167848424
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/checkins"
+        name: Cadastrar check-in
+        meta:
+          id: req_ccfa34b7ae6e49ef905c814b80d57b5f
+          created: 1793669381069
+          modified: 1794167853429
+          isPrivate: false
+          description: ""
+          sortKey: -1794167853372
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: photo
+              value: ""
+              description: ""
+              disabled: false
+              multiline: false
+              fileName: C:\caminho\para\foto-teste.jpg
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+        authentication:
+          type: bearer
+          token: "{{ _.token_user_a }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/checkins"
+        name: Listar check-ins
+        meta:
+          id: req_06d7fd8c246745328f3fa984bf626f26
+          created: 1793670714696
+          modified: 1794167858308
+          isPrivate: false
+          description: ""
+          sortKey: -1794167853272
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.token_user_a }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/checkins/{{ _.checkin_id }}"
+        name: Update check-in
+        meta:
+          id: req_91ccdc5857ad456da24a6896d56aee86
+          created: 1794056449102
+          modified: 1794167860433
+          isPrivate: false
+          description: ""
+          sortKey: -1794167853172
+        method: PUT
+        body:
+          mimeType: application/json
+          text: '{ "status": "REJECTED" }'
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/checkins/{{ _.checkin_id }}"
+        name: Deletar check-in
+        meta:
+          id: req_2f0a471d3fb04df896bceead58f661cb
+          created: 1794057831181
+          modified: 1794167866827
+          isPrivate: false
+          description: ""
+          sortKey: -1794167853072
+        method: DELETE
+        authentication:
+          type: bearer
+          token: "{{ _.token_admin }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/checkins/my-checkins"
+        name: Listar check-in individuais
+        meta:
+          id: req_272e1e5f0fe0404b96ced89b34aad37f
+          created: 1794136557586
+          modified: 1794167864160
+          isPrivate: false
+          description: ""
+          sortKey: -1794167853222
+        method: GET
+        authentication:
+          type: bearer
+          token: "{{ _.token_user_a }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_0f2442a69c984c53ba9a225042de317e
+    created: 1793629487163
+    modified: 1793629487163
+environments:
+  name: Base Environment
+  meta:
+    id: env_d6a32dc6245842ce9b9b0e1587722ee3
+    created: 1793629487144
+    modified: 1793629487144
+    isPrivate: false
+  data:
+    base_url: http://localhost:5001/api
+    token_admin: ""
+    token_user_a: ""
+    token_user_b: ""
+    checkin_id: ""
+    user_id: ""
+    user_id_delete: ""
+    season_id: ""
+    season_id_delete: ""

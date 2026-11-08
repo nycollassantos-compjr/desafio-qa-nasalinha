@@ -1,0 +1,563 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-11-08T20:06:29.000Z",
+  "__export_source": "converted-from-insomnia-v5-yaml",
+  "resources": [
+    {
+      "_id": "wrk_f19312a94fa04ded82d93095da5d8590",
+      "parentId": null,
+      "modified": 1794167476954,
+      "created": 1794167476954,
+      "name": "Testando NaSalinha",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_c78d9087ba5b4e0abe17b96075218975",
+      "parentId": "wrk_f19312a94fa04ded82d93095da5d8590",
+      "modified": 1794081481758,
+      "created": 1794062918234,
+      "url": "{{ _.base_url }}/rankings",
+      "name": "Listar ranking",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_user_a }}"
+      },
+      "metaSortKey": -1794062918234,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_bee18a2118694bbc90fd12c0b6a0d7ff",
+      "parentId": "wrk_f19312a94fa04ded82d93095da5d8590",
+      "modified": 1794167768775,
+      "created": 1794167768775,
+      "name": "Usuário",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1794167768775,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_592dd136463f446bbe42e86d7060e9f7",
+      "parentId": "fld_bee18a2118694bbc90fd12c0b6a0d7ff",
+      "modified": 1794167792110,
+      "created": 1793629696040,
+      "url": "{{ _.base_url }}/auth/register",
+      "name": "Cadastro usuário",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Ricardo Quaresma\",\n  \"email\": \"quaresma@email.com\",\n  \"password\": \"#teste1234\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1794167785463,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_619aaa2b3ef14819a275e58d94c4a7ce",
+      "parentId": "fld_bee18a2118694bbc90fd12c0b6a0d7ff",
+      "modified": 1794168117012,
+      "created": 1793658810233,
+      "url": "{{ _.base_url }}/auth/login",
+      "name": "Login usuário",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"contatestesrichard@gmail.com\",\n  \"password\": \"#teste1234\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1794167785563,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8d8f45259eae4f58b008eec23a236075",
+      "parentId": "fld_bee18a2118694bbc90fd12c0b6a0d7ff",
+      "modified": 1794167796725,
+      "created": 1793661670045,
+      "url": "{{ _.base_url }}/users",
+      "name": "Listar usuários",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167785363,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_45a20137abc04f0ca7660d49c536584a",
+      "parentId": "fld_bee18a2118694bbc90fd12c0b6a0d7ff",
+      "modified": 1794167802196,
+      "created": 1794136658014,
+      "url": "{{ _.base_url }}/users/{{ _.user_id_delete }}",
+      "name": "Deletar usuário",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167785163,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_89aaf25468cc4e229401f6f6ff05b13c",
+      "parentId": "fld_bee18a2118694bbc90fd12c0b6a0d7ff",
+      "modified": 1794167799721,
+      "created": 1794137116559,
+      "url": "{{ _.base_url }}/users/{{ _.user_id }}",
+      "name": "Update usuário",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Bernardo Silva\",\n  \"email\": \"silva@email.com\",\n  \"password\": \"#teste1234\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_user_b }}"
+      },
+      "metaSortKey": -1794167785263,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_f7647142eff0465694c923cc9e72e66c",
+      "parentId": "wrk_f19312a94fa04ded82d93095da5d8590",
+      "modified": 1794167818357,
+      "created": 1794167818357,
+      "name": "Temporada",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1794167818357,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_474580a0c17e4599a73e975785b2854c",
+      "parentId": "fld_f7647142eff0465694c923cc9e72e66c",
+      "modified": 1794167824142,
+      "created": 1793659029683,
+      "url": "{{ _.base_url }}/seasons",
+      "name": "Cadastro temporada",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Temporada QA22\",\n  \"description\": \"Teste de permissão\",\n  \"startDate\": \"2026-03-01\",\n  \"endDate\": \"2026-11-30\",\n  \"isActive\": true,\n  \"pointsPerCheckIn\": 15\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167824078,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ff2f86336a26438692f4cb5a24b4ea9e",
+      "parentId": "fld_f7647142eff0465694c923cc9e72e66c",
+      "modified": 1794167829860,
+      "created": 1794138068761,
+      "url": "{{ _.base_url }}/seasons/{{ _.season_id }}",
+      "name": "Update temporada",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Temporada QA\",\n  \"description\": \"Teste de permissão\",\n  \"startDate\": \"2026-01-01\",\n  \"endDate\": \"2026-12-31\",\n  \"isActive\": true,\n  \"pointsPerCheckIn\": 10\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167823878,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_703c4642dfcd45a18a0eb2bcb8a0635d",
+      "parentId": "fld_f7647142eff0465694c923cc9e72e66c",
+      "modified": 1794167827035,
+      "created": 1794138148950,
+      "url": "{{ _.base_url }}/seasons",
+      "name": "Listar temporada",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167823978,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f27c878adcc24055b7fcff80282dc15e",
+      "parentId": "fld_f7647142eff0465694c923cc9e72e66c",
+      "modified": 1794167832124,
+      "created": 1794138467773,
+      "url": "{{ _.base_url }}/seasons/{{ _.season_id_delete }}",
+      "name": "Deletar temporada",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167823778,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_4382901e9aec4f0c993afbc1a74efac9",
+      "parentId": "wrk_f19312a94fa04ded82d93095da5d8590",
+      "modified": 1794167848424,
+      "created": 1794167848424,
+      "name": "Check-in",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1794167848424,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_ccfa34b7ae6e49ef905c814b80d57b5f",
+      "parentId": "fld_4382901e9aec4f0c993afbc1a74efac9",
+      "modified": 1794167853429,
+      "created": 1793669381069,
+      "url": "{{ _.base_url }}/checkins",
+      "name": "Cadastrar check-in",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "name": "photo",
+            "value": "",
+            "description": "",
+            "disabled": false,
+            "multiline": false,
+            "fileName": "C:\\caminho\\para\\foto-teste.jpg",
+            "type": "file"
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_user_a }}"
+      },
+      "metaSortKey": -1794167853372,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_06d7fd8c246745328f3fa984bf626f26",
+      "parentId": "fld_4382901e9aec4f0c993afbc1a74efac9",
+      "modified": 1794167858308,
+      "created": 1793670714696,
+      "url": "{{ _.base_url }}/checkins",
+      "name": "Listar check-ins",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_user_a }}"
+      },
+      "metaSortKey": -1794167853272,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_91ccdc5857ad456da24a6896d56aee86",
+      "parentId": "fld_4382901e9aec4f0c993afbc1a74efac9",
+      "modified": 1794167860433,
+      "created": 1794056449102,
+      "url": "{{ _.base_url }}/checkins/{{ _.checkin_id }}",
+      "name": "Update check-in",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"status\": \"REJECTED\" }"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167853172,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2f0a471d3fb04df896bceead58f661cb",
+      "parentId": "fld_4382901e9aec4f0c993afbc1a74efac9",
+      "modified": 1794167866827,
+      "created": 1794057831181,
+      "url": "{{ _.base_url }}/checkins/{{ _.checkin_id }}",
+      "name": "Deletar check-in",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_admin }}"
+      },
+      "metaSortKey": -1794167853072,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_272e1e5f0fe0404b96ced89b34aad37f",
+      "parentId": "fld_4382901e9aec4f0c993afbc1a74efac9",
+      "modified": 1794167864160,
+      "created": 1794136557586,
+      "url": "{{ _.base_url }}/checkins/my-checkins",
+      "name": "Listar check-in individuais",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token_user_a }}"
+      },
+      "metaSortKey": -1794167853222,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_d6a32dc6245842ce9b9b0e1587722ee3",
+      "parentId": "wrk_f19312a94fa04ded82d93095da5d8590",
+      "modified": 1793629487144,
+      "created": 1793629487144,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:5001/api",
+        "token_admin": "",
+        "token_user_a": "",
+        "token_user_b": "",
+        "checkin_id": "",
+        "user_id": "",
+        "user_id_delete": "",
+        "season_id": "",
+        "season_id_delete": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "token_admin",
+          "token_user_a",
+          "token_user_b",
+          "checkin_id",
+          "user_id",
+          "user_id_delete",
+          "season_id",
+          "season_id_delete"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1793629487144,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_0f2442a69c984c53ba9a225042de317e",
+      "parentId": "wrk_f19312a94fa04ded82d93095da5d8590",
+      "modified": 1793629487163,
+      "created": 1793629487163,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
