@@ -37,7 +37,7 @@ Auditoria das três áreas core:
 |---|---|
 | Casos de teste e Kanban | [GitHub Projects](https://github.com/nycollassantos-compjr/desafio-qa-nasalinha/projects) |
 | Bug reports | [Issues](https://github.com/nycollassantos-compjr/desafio-qa-nasalinha/issues) |
-| Coleção de API (Insomnia) | [`/api/nasalinha-collection.json`](api/nasalinha-collection.json) |
+| Coleção de API (Insomnia) | [`/api/nasalinha-collection`](https://github.com/nycollassantos-compjr/desafio-qa-nasalinha/tree/main/insomnia) |
 | Relatório de Testes Final | [`RelatorioFinal.md`](RelatorioFinal.md) |
 
 ## 🚀 Como rodar o projeto testado
